@@ -24,3 +24,7 @@
 
   </div>
 <?php endforeach; ?>
+
+<div class="pull-right">
+  <?php echo $links; ?>
+</div>
