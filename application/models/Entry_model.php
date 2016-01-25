@@ -18,7 +18,7 @@ class Entry_model extends CI_Model {
     return $query->row_array();
   }
 
-  public function set_entries()
+  public function set_entry()
   {
     $data = array(
       'user' => $this->input->post('user'),
@@ -27,5 +27,10 @@ class Entry_model extends CI_Model {
     );
 
     return $this->db->insert('entries', $data);
+  }
+
+  public function delete_entry($id)
+  {
+    return $this->db->delete('entries', array('id' => $id));
   }
 }

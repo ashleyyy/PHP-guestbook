@@ -20,6 +20,7 @@ class Entries extends CI_Controller {
 
   public function view($id = NULL)
   {
+    $this->load->helper('form');
     $data['entry'] = $this->entry_model->get_entries($id);
 
     if (empty($data['entry']))
@@ -53,10 +54,22 @@ class Entries extends CI_Controller {
     }
     else
     {
-      $this->entry_model->set_entries();
+      $this->entry_model->set_entry();
       //redirect?
       $this->load->view('entries/success');
     }
+  } 
+
+  public function delete($id = NULL)
+  {
+    $this->load->helper('form');
+
+    $data['title'] = 'View Entry';
+
+    $this->entry_model->delete_entry($id);
+    //redirect?
+    $this->load->view('entries/success');
+    
   } 
 
 }
