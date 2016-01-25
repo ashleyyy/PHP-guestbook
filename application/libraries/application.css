@@ -1,0 +1,25 @@
+h2 {
+  font-size: 5vmin;
+}
+
+.comments {
+  margin: 1.5vh 2vw 4vh 2vw;
+  font-size: 2.2vmin;
+}
+
+form {
+  display: inline;
+  margin: .3vmin;
+}
+
+.title {
+  font-size: 3.5vmin;
+}
+
+.timestamp {
+  font-size: 1.8vmin;
+}
+
+label.col-sm-2.control-label, input, textarea.form-control, input.form-control {
+  font-size: 2.2vmin;
+}
