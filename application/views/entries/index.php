@@ -10,8 +10,6 @@
       <?php echo $entry['comments']; ?>
     </div>
 
-    <p>
-
     <?//php echo form_open('entries/'.$entry['id']); ?><form>
       <input type="submit" name="view" value="Email" />
     </form>

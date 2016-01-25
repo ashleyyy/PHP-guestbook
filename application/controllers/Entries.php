@@ -58,7 +58,7 @@ class Entries extends CI_Controller {
     else
     {
       $this->entry_model->set_entry();
-      //redirect?
+      //TODO: get $id back from new object
       redirect('entries/'.$id);
     }
   } 
