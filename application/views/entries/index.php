@@ -1,18 +1,28 @@
+<h2><?php echo $title; ?></h2>
+
 <?php foreach ($entries as $entry): ?>
+  <div class = "well">
 
-  <h3><?php echo $entry['user']; ?></h3>
-  <?php echo $entry['t']; ?>
-  <div class="comments">
-    <?php echo $entry['comments']; ?>
+    <span class = "title"><?php echo $entry['user']; ?></span>
+    <span class ="timestamp">(<?php echo $entry['t']; ?>)</span>
+
+    <div class="comments">
+      <?php echo $entry['comments']; ?>
+    </div>
+
+    <p>
+
+    <?//php echo form_open('entries/'.$entry['id']); ?><form>
+      <input type="submit" name="view" value="Email" />
+    </form>
+
+    <?php echo form_open('entries/'.$entry['id']); ?>
+      <input type="submit" name="view" value="View" />
+    </form>
+
+    <?php echo form_open('entries/delete/'.$entry['id']); ?>
+      <input type="submit" name="delete" value="Delete" />
+    </form>
+
   </div>
-
-  <a href="<?php echo site_url('entries/'.$entry['id']); ?>">View on single page</a>
-
-<?php 
-  $id = $entry['id'];
-  echo form_open('entries/delete/'.$id); 
-?>
-
-<input type="submit" name="delete" value="Delete Entry" /></form>
-
 <?php endforeach; ?>

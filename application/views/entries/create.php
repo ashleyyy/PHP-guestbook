@@ -1,18 +1,33 @@
-<h2><?php echo $title; ?></h2>
+<h2>Sign the Guestbook</h2>
 
 <?php echo validation_errors(); ?>
-
+<form class="form-horizontal">
 <?php echo form_open('entries/create'); ?>
 
-  <label for="user">Your Name</label>
-  <input type="input" name="user" /><br />
+  <div class="form-group">
+    <label for="user" class="col-sm-2 control-label">Your Name</label>
+    <div class="col-sm-10">
+      <input type="input" name="user" class="form-control"placeholder="Name"/><br />
+    </div>
+  </div>
 
-  <label for="email">Your Email Address</label>
-  <input type="input" name="email" /><br />
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label">Your Email Address</label>
+    <div class="col-sm-10">
+      <input type="input" name="email" class="form-control" placeholder="Email"/><br />
+    </div>
+  </div>
 
-  <label for="comments">Your Comments</label>
-  <textarea name="comments"></textarea><br />
+  <div class="form-group">
+    <label for="comments" class="col-sm-2 control-label">Your Comments</label>
+    <div class="col-sm-10">
+      <textarea name="comments" class="form-control" placeholder="Wow, your site is really amazing"></textarea>
+    </div>
+  </div>
 
-  <input type="submit" name="submit" value="Sign Guestbook" />
-
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" name="submit" value="Sign Guestbook" />
+    </div>
+  </div> 
 </form>
