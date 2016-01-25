@@ -1,4 +1,5 @@
 <h2><?php echo $title; ?></h2>
+<?php echo $links; ?>
 
 <?php foreach ($entries as $entry): ?>
   <div class = "well">
