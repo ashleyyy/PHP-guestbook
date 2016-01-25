@@ -4,7 +4,7 @@
 
 <?php echo form_open('entries/create'); ?>
 
-  <label for="title">Your Name</label>
+  <label for="user">Your Name</label>
   <input type="input" name="user" /><br />
 
   <label for="email">Your Email Address</label>
