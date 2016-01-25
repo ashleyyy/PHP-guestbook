@@ -27,7 +27,7 @@ class Entries extends CI_Controller {
       show_404();
     }
 
-    $data['title'] = $data['entry']['user']."'s comments";
+    $data['title'] = $data['entry']['user'];
 
     $this->load->view('templates/header', $data);
     $this->load->view('entries/view', $data);
@@ -50,13 +50,12 @@ class Entries extends CI_Controller {
       $this->load->view('templates/header', $data);
       $this->load->view('entries/create');
       $this->load->view('templates/footer');
-
     }
     else
     {
-      $this->news_model->set_entries();
+      $this->entry_model->set_entries();
       //redirect?
-      $this->load->view('entries/index');
+      $this->load->view('entries/success');
     }
   } 
 

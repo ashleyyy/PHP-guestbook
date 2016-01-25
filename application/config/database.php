@@ -6,7 +6,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:8000',
+	'hostname' => 'localhost',
 	'username' => 'okay',
 	'password' => '',
 	'database' => 'guestbook',

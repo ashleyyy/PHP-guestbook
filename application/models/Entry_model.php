@@ -18,7 +18,7 @@ class Entry_model extends CI_Model {
     return $query->row_array();
   }
 
-  public function set_news()
+  public function set_entries()
   {
     $data = array(
       'user' => $this->input->post('user'),

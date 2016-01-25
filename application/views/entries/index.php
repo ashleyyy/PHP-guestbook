@@ -4,8 +4,8 @@
 
         <h3><?php echo $entry['user']; ?></h3>
         <div class="main">
-                <?php echo $entry['comments']; ?>
+          <?php echo $entry['comments']; ?>
         </div>
-        <p><a href="<?php echo site_url('entries/'.$entry['id']); ?>">View article</a></p>
+        <p><a href="<?php echo site_url('entries/'.$entry['id']); ?>">View more...</a></p>
 
 <?php endforeach; ?>
