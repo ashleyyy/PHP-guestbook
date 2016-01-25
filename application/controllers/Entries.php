@@ -18,11 +18,11 @@ class Entries extends CI_Controller {
     $config['base_url'] = 'http://localhost:8000/entries/index';
     $config['per_page'] = 10;    
     $config['uri_segment'] = 3;
-    // $config['use_page_numbers'] = TRUE;
-    // $config['page_query_string'] = TRUE;
-    $config['reuse_query_string'] = FALSE;
-    $config['use_global_url_suffix'] = FALSE;
     $config['total_rows'] = $this->entry_model->record_count();
+    $config['display_pages'] = FALSE;
+    $config['next_link'] = '| next 10';
+    $config['prev_link'] = 'previous 10 |';
+    $config['attributes'] = array('class' => 'pages');
 
     $this->pagination->initialize($config);
 
@@ -30,7 +30,7 @@ class Entries extends CI_Controller {
     $data['links'] = $this->pagination->create_links();
 
     $data['entries'] = $this->entry_model->get_entries($config['per_page'], $page);
-    $data['title'] = 'Guestbook';
+    $data['title'] = 'Read the Guestbook';
 
     $this->load->view('templates/header', $data);
     $this->load->view('entries/create', $data);
@@ -53,7 +53,6 @@ class Entries extends CI_Controller {
     $this->load->view('templates/header', $data);
     $this->load->view('entries/view', $data);
     $this->load->view('templates/footer');
-
   }
 
   public function create()
@@ -89,7 +88,6 @@ class Entries extends CI_Controller {
     $this->entry_model->delete_entry($id);
     $data['message'] = "Entry Successfully Deleted";
     redirect('entries/', $data);
-    
   } 
 
 }

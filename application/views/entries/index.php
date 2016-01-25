@@ -1,5 +1,4 @@
 <h2><?php echo $title; ?></h2>
-<?php echo $links; ?>
 
 <?php foreach ($entries as $entry): ?>
   <div class = "well">
@@ -25,3 +24,7 @@
 
   </div>
 <?php endforeach; ?>
+
+<div class="pull-right">
+  <?php echo $links; ?>
+</div>
