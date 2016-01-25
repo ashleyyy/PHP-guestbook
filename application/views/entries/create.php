@@ -13,6 +13,6 @@
   <label for="comments">Your Comments</label>
   <textarea name="comments"></textarea><br />
 
-  <input type="submit" name="submit" value="Submit Entry" />
+  <input type="submit" name="submit" value="Sign Guestbook" />
 
 </form>

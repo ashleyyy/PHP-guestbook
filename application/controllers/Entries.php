@@ -10,10 +10,13 @@ class Entries extends CI_Controller {
 
   public function index()
   {
+    $this->load->helper('form');
+
     $data['entries'] = $this->entry_model->get_entries();
     $data['title'] = 'Guestbook';
 
     $this->load->view('templates/header', $data);
+    $this->load->view('entries/create', $data);
     $this->load->view('entries/index', $data);
     $this->load->view('templates/footer');
   }
@@ -56,7 +59,7 @@ class Entries extends CI_Controller {
     {
       $this->entry_model->set_entry();
       //redirect?
-      $this->load->view('entries/success');
+      redirect('entries/'.$id);
     }
   } 
 
@@ -67,8 +70,8 @@ class Entries extends CI_Controller {
     $data['title'] = 'View Entry';
 
     $this->entry_model->delete_entry($id);
-    //redirect?
-    $this->load->view('entries/success');
+    $data['message'] = "Entry Successfully Deleted";
+    redirect('entries/', $data);
     
   } 
 
