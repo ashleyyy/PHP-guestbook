@@ -27,6 +27,8 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
+      <!-- this hidden field is to check for bots that automatically fill all fields -->
+      <input type="hidden" name="empty" />
       <input type="submit" name="submit" value="Sign Guestbook" />
     </div>
   </div> 

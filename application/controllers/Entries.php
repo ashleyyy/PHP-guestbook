@@ -14,15 +14,16 @@ class Entries extends CI_Controller {
     $this->load->helper('form');
     $this->load->library('pagination');
 
-    $config = array();
-    $config['base_url'] = 'http://localhost:8000/entries/index';
-    $config['per_page'] = 10;    
-    $config['uri_segment'] = 3;
-    $config['total_rows'] = $this->db->count_all('entries');
-    $config['display_pages'] = FALSE;
-    $config['next_link'] = '| previous 10';
-    $config['prev_link'] = 'next 10 |';
-    $config['attributes'] = array('class' => 'pages');
+    $config = array(
+          'base_url' => 'http://localhost:8000/entries/index',
+          'per_page' => 5,    
+          'uri_segment' => 3,
+          'total_rows' => $this->db->count_all('entries'),
+          'display_pages' => FALSE,
+          'next_link' => '| previous 5',
+          'prev_link' => 'next 5 |',
+          'attributes' => array('class' => 'pages')
+        );
 
     $this->pagination->initialize($config);
 
@@ -64,6 +65,7 @@ class Entries extends CI_Controller {
 
     $this->form_validation->set_rules('user', 'User Name', 'required');
     $this->form_validation->set_rules('email', 'Email Address', 'required');
+    $this->form_validation->set_rules('empty', 'Empty', 'callback_empty_check');
 
     if ($this->form_validation->run() === FALSE)
     {
@@ -78,6 +80,19 @@ class Entries extends CI_Controller {
       redirect('entries/', $data);
     }
   } 
+
+  public function empty_check($str)
+  //if the hidden field has something in it, the form won't validate
+  {
+    if ($str != null)
+    {
+      return FALSE;
+    }
+    else
+    {
+      return TRUE;
+    }
+  }
 
   public function delete($id = NULL)
   {

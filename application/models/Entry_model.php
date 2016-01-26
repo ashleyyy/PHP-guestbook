@@ -6,10 +6,6 @@ class Entry_model extends CI_Model {
     $this->load->database();
   }
 
-  public function record_count() {
-    return $this->db->count_all('entries');
-  }
-
   public function get_entries($limit, $start)
   {
       $this->db->order_by("t", "desc");
