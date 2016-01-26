@@ -11,8 +11,8 @@
       <?php echo $entry['comments']; ?>
     </div>
 
-    <?//php echo form_open('entries/'.$entry['id']); ?><form>
-      <input type="submit" name="view" value="Email" />
+    <form action="mailto:<?php echo $entry['email'] ?>">
+      <input type="submit" name="email" value="Email" />
     </form>
 
     <?php echo form_open('entries/'.$entry['id']); ?>
@@ -20,6 +20,7 @@
     </form>
 
     <?php echo form_open('entries/delete/'.$entry['id']); ?>
+      <input name="redirect" type="hidden" value="<?= $this->uri->uri_string() ?>" />
       <input type="submit" name="delete" value="Delete" />
     </form>
 
