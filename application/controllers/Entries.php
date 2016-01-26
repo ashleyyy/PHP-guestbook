@@ -15,7 +15,7 @@ class Entries extends CI_Controller {
     $this->load->library('pagination');
 
     $config = array(
-          'base_url' => 'http://localhost:8000/entries/index',
+          'base_url' => '/entries/index',
           'per_page' => 5,    
           'uri_segment' => 3,
           'total_rows' => $this->db->count_all('entries'),
