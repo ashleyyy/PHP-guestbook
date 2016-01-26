@@ -20,8 +20,8 @@ class Entries extends CI_Controller {
     $config['uri_segment'] = 3;
     $config['total_rows'] = $this->db->count_all('entries');
     $config['display_pages'] = FALSE;
-    $config['next_link'] = '| next 10';
-    $config['prev_link'] = 'previous 10 |';
+    $config['next_link'] = '| previous 10';
+    $config['prev_link'] = 'next 10 |';
     $config['attributes'] = array('class' => 'pages');
 
     $this->pagination->initialize($config);
@@ -75,7 +75,7 @@ class Entries extends CI_Controller {
     {
       $this->entry_model->set_entry();
       //TODO: get $id back from new object
-      redirect('entries/'.$id);
+      redirect('entries/', $data);
     }
   } 
 
@@ -86,8 +86,8 @@ class Entries extends CI_Controller {
     $data['title'] = 'View Entry';
 
     $this->entry_model->delete_entry($id);
-    $data['message'] = "Entry Successfully Deleted";
-    redirect('entries/', $data);
+    //TODO: success flash (needs sessions to work)
+    redirect($this->input->post('redirect'));
   } 
 
 }
