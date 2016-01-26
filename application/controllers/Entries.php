@@ -18,7 +18,7 @@ class Entries extends CI_Controller {
     $config['base_url'] = 'http://localhost:8000/entries/index';
     $config['per_page'] = 10;    
     $config['uri_segment'] = 3;
-    $config['total_rows'] = $this->entry_model->record_count();
+    $config['total_rows'] = $this->db->count_all('entries');
     $config['display_pages'] = FALSE;
     $config['next_link'] = '| next 10';
     $config['prev_link'] = 'previous 10 |';

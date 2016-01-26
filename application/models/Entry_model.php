@@ -12,9 +12,11 @@ class Entry_model extends CI_Model {
 
   public function get_entries($limit, $start)
   {
+      $this->db->order_by("t", "desc");
       $this->db->limit($limit, $start);
       $query = $this->db->get('entries');
-      return $query->result_array();
+      $result = $query->result_array();
+      return $result;
   }
 
   public function get_entry($id) {
