@@ -65,6 +65,7 @@ class Entries extends CI_Controller {
 
     $this->form_validation->set_rules('user', 'User Name', 'trim|required');
     $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
+    $this->form_validation->set_rules('comments', 'Comments', 'trim');
     $this->form_validation->set_rules('empty', 'Empty', 'callback_empty_check');
 
     if ($this->form_validation->run() === FALSE)

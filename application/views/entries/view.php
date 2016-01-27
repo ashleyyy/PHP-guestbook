@@ -18,4 +18,8 @@
   <?php echo form_open('entries/delete/'.$entry['id']); ?>
     <input type="submit" name="delete" value="Delete" />
   </form>
+
+  <?php echo form_open('entries/create') ?>
+    <input type="submit" name="create" value="Sign Guestbook" />
+  </form>
 </div>
