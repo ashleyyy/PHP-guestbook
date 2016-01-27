@@ -23,6 +23,7 @@ form {
 
 .timestamp {
   font-size: 1.8vmin;
+  font-style: italic;
 }
 
 label.col-sm-2.control-label, input, input.form-control, textarea.form-control, {
